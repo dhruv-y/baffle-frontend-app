@@ -1,0 +1,12 @@
+.types-card {
+    border-bottom: 1px solid #eee;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 5px 0;
+    .type{
+        font-size: 14px;
+        padding: 5px;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+}
