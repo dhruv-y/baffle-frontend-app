@@ -1,0 +1,17 @@
+.pokemon-container {
+    padding: 10px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 100%;
+
+    .inner-text {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: 1px solid #eee;
+        padding: 15px;
+        border-radius: 10px;
+    }
+}
