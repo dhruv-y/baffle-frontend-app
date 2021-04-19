@@ -1,7 +1,9 @@
 import React from 'react'
 import './homepage.style.scss'
-import logo from '../../assets/pokedex.png'
+import logo from '../../img/pokedex.png'
 import TypesContainer from '../../components/pokemon-types/types-container/TypesContainer'
+import PokemonContainer from '../../components/pokemons/pokemon-container/PokemonContainer'
+
 export default function Homepage() {
     return (
         <div className="homepage">
@@ -13,7 +15,7 @@ export default function Homepage() {
                     <TypesContainer />
                 </div>
                 <div className="pokemons">
-
+                    <PokemonContainer />
                 </div>
                 <div className="favorites">
 
