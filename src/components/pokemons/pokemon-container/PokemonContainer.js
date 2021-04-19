@@ -5,23 +5,20 @@ import './pokemon-container.style.scss'
 
 export default function PokemonContainer() {
     const { pokemons } = useContext(GlobalContext);
-    console.log(pokemons[0])
     return (
-        <div className="container">
-            <h2>Pokemons</h2>
+        <div className="pokemon-container">
             {
                 pokemons.length ? (
                     pokemons[0].map(({ pokemon }) => (
                         <PokemonCard
-                            key={pokemon.url.split('/', 7)[-1]}
+                            key={pokemon.url.split('/')[pokemon.url.split('/').length - 2]}
+                            number={pokemon.url.split('/')[pokemon.url.split('/').length - 2]}
                             name={pokemon.name}
                         />
                     ))
 
                 ) : (
-                        <div className="inner-message">
-                            <h3>Select a type first...</h3>
-                        </div >
+                        <h3 className="inner-text">Select your favorite type</h3>
                     )
             }
         </div >

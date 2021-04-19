@@ -10,8 +10,8 @@ export default function TypesContainer() {
     const { types } = pokeTypes
 
     return (
-        <div className="types-section">
-            <h2>Pokemon Types</h2>
+        <div className="types-container">
+            <h2 className="title">Pokemon Types</h2>
             {
                 types.map(({ id, type }) => (
                     <TypesCard key={id} type={type} />

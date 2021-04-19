@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import axios from 'axios';
 import { GlobalContext } from '../../../context/GlobalState';
+import './types-card.style.scss'
 
 export default function TypesCard({ type }) {
     const { getAllPokemon } = useContext(GlobalContext);
@@ -21,7 +22,7 @@ export default function TypesCard({ type }) {
         <div className="types-card"
             onClick={() => getTypeData(type)}
         >
-            <h4>{type}</h4>
+            <h4 className="type">{type}</h4>
         </div>
     )
 }
