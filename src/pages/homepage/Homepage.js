@@ -3,7 +3,7 @@ import './homepage.style.scss'
 import logo from '../../img/pokedex.png'
 import TypesContainer from '../../components/pokemon-types/types-container/TypesContainer'
 import PokemonContainer from '../../components/pokemons/pokemon-container/PokemonContainer'
-
+import Modal from '../../components/pokemons/modal/Modal'
 export default function Homepage() {
     return (
         <div className="homepage">
