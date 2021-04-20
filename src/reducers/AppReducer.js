@@ -18,6 +18,23 @@ export default (state, action) => {
                 favorites: [action.payload, ...state.favorites]
             }
 
+        case "OPEN_MODAL":
+            return {
+                ...state,
+                modal: action.payload
+            }
+
+        case "CLOSE_MODAL":
+            return {
+                ...state,
+                modal: {
+                    name: null,
+                    number: null,
+                    isOpen: false
+                }
+            }
+
+
         default:
             return state;
     }

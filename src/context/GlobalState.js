@@ -4,7 +4,12 @@ import AppReducer from '../reducers/AppReducer';
 // initial state
 const initialState = {
     pokemons: [],
-    favorites: []
+    favorites: [],
+    modal: {
+        name: null,
+        number: null,
+        isOpen: false
+    }
 };
 
 // create context
@@ -21,7 +26,14 @@ export const GlobalProvider = (props) => {
 
     const addPokemonToFav = pokemon => {
         dispatch({ type: "ADD_FAV_POKEMON", payload: pokemon });
+    }
 
+    const openModal = modalProps => {
+        dispatch({ type: "OPEN_MODAL", payload: modalProps })
+    }
+
+    const closeModal = () => {
+        dispatch({ type: "CLOSE_MODAL", payload: null })
     }
 
     return (
@@ -29,8 +41,11 @@ export const GlobalProvider = (props) => {
             value={{
                 pokemons: state.pokemons,
                 favorites: state.favorites,
+                modal: state.modal,
                 getAllPokemon,
-                addPokemonToFav
+                addPokemonToFav,
+                openModal,
+                closeModal
             }}>
             {props.children}
         </GlobalContext.Provider>
