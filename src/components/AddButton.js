@@ -16,13 +16,13 @@ export default function AddButton({ id, name }) {
     }
 
     return (
-        <div className="button-container" style={{ textAlign: 'right' }}>
+        <div className="button-container">
             <button
                 onClick={() => setModalOpen({ id, name }, true)}
                 disabled={favoritesDisabled}
-                style={{ border: 0, padding: '5px', background: "transparent" }}
+                className="add-button"
             >
-                <i className="fas fa-plus" style={{ cursor: 'pointer' }}></i>
+                <i className="fas fa-plus add"></i>
             </button>
         </div>
     )

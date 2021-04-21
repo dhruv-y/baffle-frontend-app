@@ -5,12 +5,11 @@ export default function CloseButton({ type, id }) {
     const { closeModal, removePokemonFromFav } = useContext(GlobalContext);
 
     return (
-        <div className="close-button" style={{ textAlign: 'right' }}>
+        <div className="button-container">
             {type === "modal" && (
                 <>
-                    <button style={{ border: 0, background: "transparent" }}>
-                        <i className="fas fa-times"
-                            style={{ cursor: 'pointer', color: 'red' }}
+                    <button className="close-button">
+                        <i className="fas fa-times close"
                             onClick={() => closeModal()}>
                         </i>
                     </button>
@@ -19,10 +18,12 @@ export default function CloseButton({ type, id }) {
 
             {type === 'favorites' && (
                 <>
-                    <button style={{ border: 0, background: "transparent" }}>
-                        <i className="fas fa-times"
-                            style={{ cursor: 'pointer', color: 'red' }}
-                            onClick={() => removePokemonFromFav(id)}>
+                    <button className="close-button">
+                        <i className="fas fa-times close"
+                            onClick={() => {
+                                if (window.confirm('Delete from favorites?'))
+                                    removePokemonFromFav(id)
+                            }}>
                         </i>
                     </button>
                 </>

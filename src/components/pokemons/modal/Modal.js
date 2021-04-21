@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import './modal.style.scss'
 import { GlobalContext } from '../../../context/GlobalState';
 import CloseButton from '../../CloseButton'
+import InputField from '../../InputField'
 
 export default function Modal() {
     const { modal, closeModal, addPokemonToFav } = useContext(GlobalContext)
@@ -33,13 +34,12 @@ export default function Modal() {
             </div>
             <div className="modal-form">
                 <form onSubmit={handleSubmit}>
-                    <input
+                    <InputField
                         className="note"
-                        type="text"
                         name="note"
                         placeholder="Enter an optional note"
                         value={modalNote.note}
-                        onChange={handleChange}
+                        handleChange={e => handleChange(e)}
                     />
                     <input
                         className="submit"
