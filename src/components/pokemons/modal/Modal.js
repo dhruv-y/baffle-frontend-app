@@ -37,7 +37,7 @@ export default function Modal() {
                         className="note"
                         type="text"
                         name="note"
-                        placeholder="Enter an optional note..."
+                        placeholder="Enter an optional note"
                         value={modalNote.note}
                         onChange={handleChange}
                     />
