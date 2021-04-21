@@ -1,6 +1,6 @@
 import React from 'react'
-import './favorites-card.style.scss'
 import CloseButton from '../../CloseButton'
+import './favorites-card.style.scss'
 
 export default function FavoritesCard({ favorite }) {
     const { id, name, note } = favorite

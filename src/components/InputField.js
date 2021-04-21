@@ -1,17 +1,16 @@
 import React from 'react'
 
-export default function SearchFilter({
-    value, handleChange, className, placeholder, name
-}) {
+export default function SearchFilter(props) {
+    const { value, handleChange, placeholder, name } = props
     return (
         <div>
             <input
                 type="text"
-                className={className}
+                name={name}
+                className={name}
                 placeholder={placeholder}
                 value={value}
                 onChange={handleChange}
-                name={name}
             />
         </div>
     )

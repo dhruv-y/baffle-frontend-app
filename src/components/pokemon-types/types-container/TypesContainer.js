@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import TYPE_DATA from './TypesData'
 import TypesCard from '../types-card/TypesCard'
-import './types-container.style.scss'
 import InputField from '../../InputField.js'
+import './types-container.style.scss'
 
 export default function TypesContainer() {
     const [searchResult, setSearchResult] = useState([])
     const [searchItem, setSearchItem] = useState("")
 
+    // runs every time the search item changes
     useEffect(() => {
         const results = TYPE_DATA.filter(({ type }) =>
             type.includes(searchItem.toLowerCase())
@@ -25,7 +26,6 @@ export default function TypesContainer() {
                 value={searchItem}
                 handleChange={e => handleChange(e)}
                 name="search"
-                className="search"
                 placeholder="Search a type..."
             />
 

@@ -8,6 +8,7 @@ export default function TypesCard({ type }) {
 
     const getTypeData = async (type) => {
         try {
+            // set global state for current type pokemons
             const res = await axios.get(`https://pokeapi.co/api/v2/type/${type}`)
             const pokemons = res.data.pokemon
             getAllPokemon({
@@ -16,8 +17,8 @@ export default function TypesCard({ type }) {
             })
 
         } catch (err) {
-            console.log("error", err);
             // handle error
+            console.log("error", err);
         }
     }
 
