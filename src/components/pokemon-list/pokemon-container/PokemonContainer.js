@@ -7,6 +7,7 @@ import './pokemon-container.style.scss'
 export default function PokemonContainer() {
     const { currentType, pokemons } = useContext(GlobalContext);
 
+    // map through all pokemon if available
     return (
         <div className="pokemon-container">
             <h3 className='header'>{currentType}</h3>

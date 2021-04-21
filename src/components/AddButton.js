@@ -4,6 +4,7 @@ import { GlobalContext } from '../context/GlobalState'
 export default function AddButton({ id, name }) {
     const { openModal, favorites } = useContext(GlobalContext);
 
+    // disable button if already favorited
     let favoritedPokemon = favorites.find(fav => fav.id === id);
     const favoritesDisabled = favoritedPokemon ? true : false
 

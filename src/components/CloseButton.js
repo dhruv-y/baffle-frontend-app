@@ -4,6 +4,7 @@ import { GlobalContext } from '../context/GlobalState'
 export default function CloseButton({ type, id }) {
     const { closeModal, removePokemonFromFav } = useContext(GlobalContext);
 
+    // deciding onClick based on type
     return (
         <div className="button-container">
             {type === "modal" && (

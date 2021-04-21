@@ -6,6 +6,7 @@ import './favorites-container.style.scss'
 export default function FavoritesContainer() {
     const { favorites } = useContext(GlobalContext);
 
+    // map over favorites array if available
     return (
         <div className="favorites-container">
             <h2 className="title">Favorites</h2>

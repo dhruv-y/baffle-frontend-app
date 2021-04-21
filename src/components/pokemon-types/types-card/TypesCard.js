@@ -6,6 +6,7 @@ import './types-card.style.scss'
 export default function TypesCard({ type }) {
     const { getAllPokemon } = useContext(GlobalContext);
 
+    // GET method based on type selected
     const getTypeData = async (type) => {
         try {
             // set global state for current type pokemons
