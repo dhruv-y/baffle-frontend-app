@@ -3,6 +3,7 @@ import AppReducer from '../reducers/AppReducer';
 
 // initial state
 const initialState = {
+    currentType: null,
     pokemons: [],
     favorites: localStorage.getItem('favorites')
         ? JSON.parse(localStorage.getItem('favorites'))
@@ -27,8 +28,8 @@ export const GlobalProvider = (props) => {
     }, [state.favorites])
 
     // actions
-    const getAllPokemon = allPokemon => {
-        dispatch({ type: "GET_ALL_POKEMON", payload: allPokemon });
+    const getAllPokemon = currentType => {
+        dispatch({ type: "GET_ALL_POKEMON", payload: currentType });
     }
 
     const addPokemonToFav = pokemon => {
@@ -50,6 +51,7 @@ export const GlobalProvider = (props) => {
     return (
         <GlobalContext.Provider
             value={{
+                currentType: state.currentType,
                 pokemons: state.pokemons,
                 favorites: state.favorites,
                 modal: state.modal,

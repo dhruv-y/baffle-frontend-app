@@ -3,7 +3,8 @@ export default (state, action) => {
         case "GET_ALL_POKEMON":
             return {
                 ...state,
-                pokemons: [action.payload]
+                currentType: action.payload.type,
+                pokemons: [action.payload.pokemons]
             }
 
         case "ADD_FAV_POKEMON":

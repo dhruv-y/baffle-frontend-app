@@ -6,13 +6,14 @@ import pokeball from '../../../img/pokeball.svg'
 import './pokemon-container.style.scss'
 
 export default function PokemonContainer() {
-    const { pokemons, modal } = useContext(GlobalContext);
+    const { currentType, pokemons, modal } = useContext(GlobalContext);
     return (
         <div className="pokemon-container">
+            <h3 className='header'>{currentType}</h3>
             {
-                modal.isOpen ? (
+                modal.isOpen && (
                     <Modal />
-                ) : null
+                )
             }
             {
                 pokemons.length ? (

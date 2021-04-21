@@ -10,7 +10,10 @@ export default function TypesCard({ type }) {
         try {
             const res = await axios.get(`https://pokeapi.co/api/v2/type/${type}`)
             const pokemons = res.data.pokemon
-            getAllPokemon(pokemons)
+            getAllPokemon({
+                pokemons: pokemons,
+                type: type
+            })
 
         } catch (err) {
             console.log("error", err);
