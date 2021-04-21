@@ -12,3 +12,42 @@ body {
   background-color: #fff;
   color: #333;
 }
+
+/* Buttons */
+.button-container {
+  text-align: right;
+}
+
+.add-button {
+  border: 0;
+  padding: 5px;
+  background: transparent;
+}
+
+.close-button {
+  border: 0;
+  background: transparent;
+}
+
+.close {
+  cursor: pointer;
+  color: red;
+}
+
+.add {
+  cursor: pointer;
+}
+
+/* Input Fields */
+
+.note {
+  padding: 50px 20px;
+  font-size: 0.9rem;
+}
+
+.search {
+  margin-bottom: 10px;
+  font-size: 16px;
+  padding: 5px;
+  width: 100%;
+}
