@@ -6,6 +6,14 @@
     align-items: center;
     height: 100%;
 
+    .header {
+        text-transform: capitalize;
+        text-align: left;
+        width: 100%;
+        margin: 5px 20px;
+        top: 0;
+    }
+
     .inner-text {
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -13,6 +21,7 @@
         padding: 15px;
         border-radius: 10px;
         font-size: 16px;
+        position: absolute;
 
         .icon {
             height: 18px;
