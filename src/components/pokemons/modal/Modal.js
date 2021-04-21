@@ -25,29 +25,32 @@ export default function Modal() {
     }
 
     return (
-        <div
-            className="modal-container"
-        >
-            <CloseButton type="modal" />
-            <div className="modal-header">
-                <h4>Add a note about <span>{modal.name}</span></h4>
-            </div>
-            <div className="modal-form">
-                <form onSubmit={handleSubmit}>
-                    <InputField
-                        className="note"
-                        name="note"
-                        placeholder="Enter an optional note"
-                        value={modalNote.note}
-                        handleChange={e => handleChange(e)}
-                    />
-                    <input
-                        className="submit"
-                        type="submit"
-                        value="Add to Favorites"
-                    />
-                </form>
-            </div>
-        </div >
+        <div className="overlay">
+            <div className="modal-container">
+
+                <CloseButton type="modal" />
+
+                <div className="modal-header">
+                    <h4>Add a note about <span>{modal.name}</span></h4>
+                </div>
+
+                <div className="modal-form">
+                    <form onSubmit={handleSubmit}>
+                        <InputField
+                            name="note"
+                            placeholder="Enter an optional note"
+                            value={modalNote.note}
+                            handleChange={e => handleChange(e)}
+                        />
+                        <input
+                            className="submit"
+                            type="submit"
+                            value="Add to Favorites"
+                        />
+                    </form>
+                </div>
+                
+            </div >
+        </div>
     )
 }
