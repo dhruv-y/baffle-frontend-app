@@ -1,26 +1,13 @@
-import React, { useState, useContext } from 'react'
-import { GlobalContext } from '../../../context/GlobalState';
+import React from 'react'
 import './pokemon-card.style.scss'
 import AddButton from "../../AddButton"
-import Modal from "../modal/Modal"
 
 export default function PokemonCard({ number, name }) {
     const imageLink = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${number}.png`
-    //const [modalOpen, setModalOpen] = useState(false);
-    const { openModal } = useContext(GlobalContext)
-
-    const setModalOpen = ({ name, number }, isOpen) => {
-        console.log(name)
-        openModal({
-            name: name,
-            number: number,
-            isOpen: isOpen
-        })
-    }
 
     return (
         <div className="pokemon-card">
-            <button onClick={() => setModalOpen({ name, number }, true)}>Add</button>
+            <AddButton id={number} name={name} />
             <div className="img-container">
                 <img src={imageLink} alt="pokeimg" />
             </div>

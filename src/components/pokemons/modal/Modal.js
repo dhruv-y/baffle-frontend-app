@@ -9,37 +9,32 @@ export default function Modal() {
         note: ""
     })
 
-    const closeModalHandler = () => {
-        closeModal()
-    }
-
     const handleChange = (e) => {
         setModalNote({ ...modalNote, [e.target.name]: e.target.value })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         addPokemonToFav({
             name: modal.name,
             number: modal.number,
             note: modalNote.note
         })
-
-        closeModalHandler()
+        closeModal()
     }
 
     return (
         <div
             className="modal-container"
         >
+            <CloseButton type="modal" />
             <div className="modal-header">
-                <h4>Add {modal.name} to Favorites</h4>
-                <button onClick={closeModalHandler}>x</button>
+                <h4>Add a note about <span>{modal.name}</span></h4>
             </div>
             <div className="modal-form">
                 <form onSubmit={handleSubmit}>
                     <input
+                        className="note"
                         type="text"
                         name="note"
                         placeholder="Enter an optional note..."
@@ -47,7 +42,9 @@ export default function Modal() {
                         onChange={handleChange}
                     />
                     <input
+                        className="submit"
                         type="submit"
+                        value="Add to Favorites"
                     />
                 </form>
             </div>
