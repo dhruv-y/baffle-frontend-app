@@ -1,7 +1,8 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import PokemonCard from '../pokemon-card/PokemonCard'
 import Modal from '../modal/Modal'
 import { GlobalContext } from '../../../context/GlobalState';
+import pokeball from '../../../img/pokeball.svg'
 import './pokemon-container.style.scss'
 
 export default function PokemonContainer() {
@@ -24,7 +25,7 @@ export default function PokemonContainer() {
                     ))
 
                 ) : (
-                        <h3 className="inner-text">Select your favorite type</h3>
+                        <h3 className="inner-text">Select your favorite type <img src={pokeball} alt="pokeImg" className="icon" /></h3>
                     )
             }
         </div >
