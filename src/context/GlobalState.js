@@ -4,7 +4,9 @@ import AppReducer from '../reducers/AppReducer';
 // initial state
 const initialState = {
     pokemons: [],
-    favorites: [],
+    favorites: localStorage.getItem('favorites')
+        ? JSON.parse(localStorage.getItem('favorites'))
+        : [],
     modal: {
         name: null,
         number: null,
@@ -19,6 +21,11 @@ export const GlobalContext = createContext(initialState);
 export const GlobalProvider = (props) => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
 
+
+    useEffect(() => {
+        localStorage.setItem('favorites', JSON.stringify(state.favorites))
+    }, [state.favorites])
+
     // actions
     const getAllPokemon = allPokemon => {
         dispatch({ type: "GET_ALL_POKEMON", payload: allPokemon });
@@ -26,6 +33,10 @@ export const GlobalProvider = (props) => {
 
     const addPokemonToFav = pokemon => {
         dispatch({ type: "ADD_FAV_POKEMON", payload: pokemon });
+    }
+
+    const removePokemonFromFav = id => {
+        dispatch({ type: "REMOVE_FAV_POKEMON", payload: id })
     }
 
     const openModal = modalProps => {
@@ -44,6 +55,7 @@ export const GlobalProvider = (props) => {
                 modal: state.modal,
                 getAllPokemon,
                 addPokemonToFav,
+                removePokemonFromFav,
                 openModal,
                 closeModal
             }}>
