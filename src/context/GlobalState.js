@@ -5,9 +5,12 @@ import AppReducer from '../reducers/AppReducer';
 const initialState = {
     currentType: null,
     pokemons: [],
+
+    // persist favorites using storage
     favorites: localStorage.getItem('favorites')
         ? JSON.parse(localStorage.getItem('favorites'))
         : [],
+
     modal: {
         id: null,
         name: null,
@@ -22,7 +25,7 @@ export const GlobalContext = createContext(initialState);
 export const GlobalProvider = (props) => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
 
-
+    // set the favorites array from localStorage
     useEffect(() => {
         localStorage.setItem('favorites', JSON.stringify(state.favorites))
     }, [state.favorites])

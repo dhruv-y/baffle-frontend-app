@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react'
 import './modal.style.scss'
-import { GlobalContext } from '../../../context/GlobalState';
-import CloseButton from '../../CloseButton'
-import InputField from '../../InputField'
+import { GlobalContext } from '../../context/GlobalState';
+import CloseButton from '../CloseButton'
+import InputField from '../InputField'
 
 export default function Modal() {
     const { modal, closeModal, addPokemonToFav } = useContext(GlobalContext)
@@ -49,7 +49,7 @@ export default function Modal() {
                         />
                     </form>
                 </div>
-                
+
             </div >
         </div>
     )
