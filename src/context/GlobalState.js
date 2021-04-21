@@ -8,8 +8,8 @@ const initialState = {
         ? JSON.parse(localStorage.getItem('favorites'))
         : [],
     modal: {
+        id: null,
         name: null,
-        number: null,
         isOpen: false
     }
 };

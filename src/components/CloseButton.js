@@ -15,9 +15,7 @@ export default function CloseButton({ type, id }) {
                         </i>
                     </button>
                 </>
-            )
-
-            }
+            )}
 
             {type === 'favorites' && (
                 <>
@@ -28,8 +26,7 @@ export default function CloseButton({ type, id }) {
                         </i>
                     </button>
                 </>
-            )
-            }
+            )}
         </div>
     )
 }

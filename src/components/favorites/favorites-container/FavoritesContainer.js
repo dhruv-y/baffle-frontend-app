@@ -12,10 +12,8 @@ export default function FavoritesContainer() {
                 favorites.length ? (
                     favorites.map(favorite => (
                         <FavoritesCard
-                            key={favorite.number}
-                            id={favorite.number}
-                            name={favorite.name}
-                            note={favorite.note}
+                            key={favorite.id}
+                            favorite={favorite}
                         />
                     ))
                 ) : (

@@ -15,7 +15,7 @@ export default (state, action) => {
         case "REMOVE_FAV_POKEMON":
             return {
                 ...state,
-                favorites: state.favorites.filter(pokemon => pokemon.number !== action.payload)
+                favorites: state.favorites.filter(pokemon => pokemon.id !== action.payload)
             }
 
         case "OPEN_MODAL":
@@ -28,8 +28,8 @@ export default (state, action) => {
             return {
                 ...state,
                 modal: {
+                    id: null,
                     name: null,
-                    number: null,
                     isOpen: false
                 }
             }

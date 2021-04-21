@@ -16,8 +16,8 @@ export default function Modal() {
     const handleSubmit = (e) => {
         e.preventDefault();
         addPokemonToFav({
+            id: modal.id,
             name: modal.name,
-            number: modal.number,
             note: modalNote.note
         })
         closeModal()

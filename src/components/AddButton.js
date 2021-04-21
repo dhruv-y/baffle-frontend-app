@@ -4,13 +4,13 @@ import { GlobalContext } from '../context/GlobalState'
 export default function AddButton({ id, name }) {
     const { openModal, favorites } = useContext(GlobalContext);
 
-    let favoritedPokemon = favorites.find(p => p.number === id);
+    let favoritedPokemon = favorites.find(fav => fav.id === id);
     const favoritesDisabled = favoritedPokemon ? true : false
 
     const setModalOpen = ({ id, name }, isOpen) => {
         openModal({
+            id: id,
             name: name,
-            number: id,
             isOpen: isOpen
         })
     }
